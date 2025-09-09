@@ -10,6 +10,7 @@
         'views/warranty_views.xml',
         'views/inherit_product_template_view.xml',
         'views/inherit_stock_picking_view.xml',
+        'views/mail_template_warranty_expiring.xml',
         'data/ir_sequence.xml',
         'data/data_cron.xml',
     ],

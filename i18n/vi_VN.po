@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-08 08:50+0000\n"
-"PO-Revision-Date: 2025-09-08 08:50+0000\n"
+"POT-Creation-Date: 2025-09-09 04:10+0000\n"
+"PO-Revision-Date: 2025-09-09 04:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: warranty_management
+#: model_terms:ir.ui.view,arch_db:warranty_management.warranty_expiry_warning_template
+msgid "(Customer:"
+msgstr "(Khách hàng:"
+
+#. module: warranty_management
 #: model:ir.model.fields.selection,name:warranty_management.selection__warranty_record__state__active
 msgid "Active"
 msgstr "Có hiệu lực"
-
-#. module: warranty_management
-#: model:ir.ui.menu,name:warranty_management.menu_warranty_root
-msgid "Warranty"
-msgstr "Bảo hành"
 
 #. module: warranty_management
 #: model:ir.model.fields,field_description:warranty_management.field_warranty_record__create_uid
@@ -61,6 +61,11 @@ msgid "Expired"
 msgstr "Hết hạn"
 
 #. module: warranty_management
+#: model:ir.model.fields.selection,name:warranty_management.selection__warranty_record__state__expiring
+msgid "Expiring Soon"
+msgstr "Sắp hết hạn"
+
+#. module: warranty_management
 #: model:ir.model.fields,field_description:warranty_management.field_warranty_record__id
 msgid "ID"
 msgstr ""
@@ -76,21 +81,30 @@ msgid "Last Updated on"
 msgstr "Cập nhật lần cuối vào"
 
 #. module: warranty_management
-#: model:ir.actions.act_window,name:warranty_management.action_warranty_record
-#: model:ir.ui.menu,name:warranty_management.menu_warranty_record
-msgid "Warranty Card"
-msgstr "Phiếu Bảo Hành"
-
-#. module: warranty_management
 #: model:ir.model,name:warranty_management.model_product_template
 #: model:ir.model.fields,field_description:warranty_management.field_warranty_record__product_id
 msgid "Product"
 msgstr "Sản phẩm"
 
 #. module: warranty_management
+#: model_terms:ir.ui.view,arch_db:warranty_management.warranty_expiry_warning_template
+msgid "Products nearing warranty expiration:"
+msgstr "Sản phẩm sắp hết hạn bảo hành:"
+
+#. module: warranty_management
+#: model_terms:ir.ui.view,arch_db:warranty_management.warranty_expiry_warning_template
+msgid "Products with expired warranty:"
+msgstr "Sản phẩm đã hết hạn bảo hành:"
+
+#. module: warranty_management
 #: model:ir.model.fields,field_description:warranty_management.field_warranty_record__start_date
 msgid "Start Date"
 msgstr "Ngày bắt đầu"
+
+#. module: warranty_management
+#: model_terms:ir.ui.view,arch_db:warranty_management.view_warranty_search
+msgid "State"
+msgstr "Tình trạng"
 
 #. module: warranty_management
 #: model:ir.model.fields,field_description:warranty_management.field_warranty_record__state
@@ -103,10 +117,26 @@ msgid "Transfer"
 msgstr "Lệnh chuyển hàng"
 
 #. module: warranty_management
+#: model:ir.actions.server,name:warranty_management.ir_cron_update_state_ir_actions_server
+msgid "Update warranty status"
+msgstr "Cập nhật tình trạng bảo hành"
+
+#. module: warranty_management
+#: model:ir.ui.menu,name:warranty_management.menu_warranty_root
+msgid "Warranty"
+msgstr "Bảo hành"
+
+#. module: warranty_management
 #: model:ir.model.fields,field_description:warranty_management.field_product_product__warranty_period
 #: model:ir.model.fields,field_description:warranty_management.field_product_template__warranty_period
 msgid "Warranty (Months)"
 msgstr "Bảo hành (Tháng)"
+
+#. module: warranty_management
+#: model:ir.actions.act_window,name:warranty_management.action_warranty_record
+#: model:ir.ui.menu,name:warranty_management.menu_warranty_record
+msgid "Warranty Card"
+msgstr "Phiếu Bảo Hành"
 
 #. module: warranty_management
 #: model:ir.model.fields,field_description:warranty_management.field_stock_picking__warranty_mumber_id
@@ -118,3 +148,23 @@ msgstr "Số bảo hành"
 #: model:ir.model,name:warranty_management.model_warranty_record
 msgid "Warranty Record"
 msgstr "Hồ sơ bảo hành"
+
+#. module: warranty_management
+#: model_terms:ir.ui.view,arch_db:warranty_management.warranty_expiry_warning_template
+msgid "[Warning] Product Warranty Information"
+msgstr "[Cảnh báo] Thông tin bảo hành sản phẩm"
+
+#. module: warranty_management
+#. odoo-python
+#: code:addons/warranty_management/models/warranty.py:0
+msgid "[Warning] Product warranty information"
+msgstr "[Cảnh báo] Thông tin bảo hành sản phẩm"
+
+#. module: warranty_management
+#: model_terms:ir.ui.view,arch_db:warranty_management.warranty_expiry_warning_template
+msgid ""
+"–\n"
+"                                Expiration Date:"
+msgstr ""
+"-\n"
+"                                Ngày hết hạn:"
