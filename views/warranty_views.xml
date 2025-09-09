@@ -20,7 +20,15 @@
             <field name="name">warranty.record.form</field>
             <field name="model">warranty.record</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Warranty Record">
+                    <header>
+                        <!-- Nút In Phiếu Bảo Hành -->
+                        <button name="action_print_warranty"
+                                string="Print the Warranty card"
+                                type="object"
+                                class="btn-primary"/>
+
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
@@ -36,11 +44,34 @@
             </field>
         </record>
 
+        <record id="view_warranty_search" model="ir.ui.view">
+            <field name="model">warranty.record</field>
+            <field name="arch" type="xml">
+                <search string="State">
+                    <filter name="Active" domain="[('state', '=', 'active')]"/>
+                    <filter name="Expiring Soon" domain="[('state', '=', 'expiring')]"/>
+                    <filter name="Expired" domain="[('state', '=', 'expired')]"/>
+                </search>
+            </field>
+        </record>
+
         <record id="action_warranty_record" model="ir.actions.act_window">
-            <field name="name">Phiếu Bảo Hành</field>
+            <field name="name">Warranty Card</field>
             <field name="res_model">warranty.record</field>
             <field name="view_mode">list,form</field>
         </record>
+
+        <!--        <record id="action_warranty_report" model="ir.actions.client">-->
+        <!--            <field name="name">Warranty Report</field>-->
+        <!--            <field name="tag">warranty_dashboard</field>-->
+        <!--        </record>-->
+
+        <!--        <menuitem id="menu_warranty_report"-->
+        <!--                  name="Warranty Report"-->
+        <!--                  parent="warranty_management.menu_warranty_root"-->
+        <!--                  action="action_warranty_report"-->
+        <!--                  sequence="0"-->
+        <!--        />-->
 
         <menuitem id="menu_warranty_root"
                   name="Warranty"

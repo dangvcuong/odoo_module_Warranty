@@ -1,0 +1,17 @@
+<template xml:space="preserve">
+    <t t-name="warranty_management.WarrantyDashboard">
+        <div class="o_warranty_dashboard p-4">
+            <div class="row g-4">
+                <t t-foreach="['active','expiring','expired']" t-as="state" t-key="state">
+                    <div class="col-md-3">
+                        <div class="card shadow-sm text-center p-3">
+                            <h5 t-esc="state.charAt(0).toUpperCase() + state.slice(1)"/>
+                            <span t-esc="counts[state]"
+                                  t-att-class="`fs-3 fw-bold ${state==='active'?'text-success':state==='expiring'?'text-warning':state==='expired'}`"/>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</template>

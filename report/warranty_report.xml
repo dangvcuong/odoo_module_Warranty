@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Action Report -->
+    <record id="action_request_report_warranty" model="ir.actions.report">
+        <field name="name">Warranty Card</field>
+        <field name="model">warranty.record</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">warranty_management.report_warranty_report</field>
+        <field name="report_file">warranty_management.report_warranty_report</field>
+    </record>
+</odoo>

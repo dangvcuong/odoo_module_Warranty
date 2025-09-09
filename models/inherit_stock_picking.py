@@ -5,7 +5,7 @@ from datetime import timedelta
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
-    warranty_mumber_id = fields.Many2one('warranty.record', string="Warranty Number", readonly=True)
+    warranty_mumber_id = fields.Many2one('warranty.record', string="Coupon code", readonly=True)
 
     def button_validate(self):
         res = super().button_validate()
